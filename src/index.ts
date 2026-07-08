@@ -1,2 +1,6 @@
 export * from "./schemas/user";
-export * from "./schemas/temperature";
+export * from "./schemas/game";
+export * from "./schemas/rank";
+export * from "./schemas/post";
+export * from "./schemas/post_information";
+export * from "./schemas/channel_data";
