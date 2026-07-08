@@ -3,7 +3,6 @@ import { z } from "zod";
 export const CreatePostInformationSchema = z.object({
   id: z.uuid(),
   version_id: z.number().int(),
-  import_date: z.iso.datetime({ offset: true }),
   category: z.string(),
   video_id: z.string(),
   video_title: z.string(),
