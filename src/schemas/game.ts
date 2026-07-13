@@ -5,8 +5,6 @@ export const CreateGameSchema = z.object({
   name: z.string(),
   release_date: z.iso.datetime({ offset: true }).optional().nullable(),
   link: z.string().optional().nullable(),
-  discussed: z.boolean(),
-  can_record: z.boolean(),
   recorded: z.boolean(),
 });
 
@@ -15,8 +13,6 @@ export const GameSchema = z.object({
   name: z.string(),
   release_date: z.iso.datetime({ offset: true }).optional().nullable(),
   link: z.string().optional().nullable(),
-  discussed: z.boolean(),
-  can_record: z.boolean(),
   recorded: z.boolean(),
 });
 

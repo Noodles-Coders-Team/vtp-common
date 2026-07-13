@@ -4,3 +4,4 @@ export * from "./schemas/rank";
 export * from "./schemas/post";
 export * from "./schemas/post_information";
 export * from "./schemas/channel_data";
+export * from "./schemas/game_info";
