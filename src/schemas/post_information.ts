@@ -1,11 +1,10 @@
 import { z } from "zod";
 
 export const CreatePostInformationSchema = z.object({
-  id: z.uuid(),
-  version_id: z.number().int(),
-  category: z.string(),
-  video_id: z.string(),
-  video_title: z.string(),
+  category: z.string().optional(),
+  version_id: z.int().default(1).optional(),
+  post_id: z.string(),
+  post_title: z.string(),
   publish_time: z.iso.datetime({ offset: true }),
   duration: z.number().int(),
   engaged_views: z.number().int(),
@@ -49,7 +48,6 @@ export const CreatePostInformationSchema = z.object({
   card_clicks: z.number().int(),
   cards_shown: z.number().int(),
   clicks_per_card_shown_percent: z.number(),
-  post_id: z.string(),
 });
 
 export const PostInformationSchema = z.object({
@@ -57,8 +55,8 @@ export const PostInformationSchema = z.object({
   version_id: z.number().int(),
   import_date: z.iso.datetime({ offset: true }),
   category: z.string(),
-  video_id: z.string(),
-  video_title: z.string(),
+  post_id: z.string(),
+  post_title: z.string(),
   publish_time: z.iso.datetime({ offset: true }),
   duration: z.number().int(),
   engaged_views: z.number().int(),
@@ -102,7 +100,6 @@ export const PostInformationSchema = z.object({
   card_clicks: z.number().int(),
   cards_shown: z.number().int(),
   clicks_per_card_shown_percent: z.number(),
-  post_id: z.string(),
 });
 
 export type CreatePostInformationDto = z.infer<typeof CreatePostInformationSchema>;
