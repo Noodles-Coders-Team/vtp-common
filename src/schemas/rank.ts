@@ -2,15 +2,14 @@ import { z } from "zod";
 
 export const CreateRankSchema = z.object({
   game_id: z.string(),
-  version_id: z.number().int(),
+  date: z.string(),
   rank: z.number(),
 });
 
 export const RankSchema = z.object({
   id: z.uuid(),
   game_id: z.string(),
-  version_id: z.number().int(),
-  date: z.iso.datetime({ offset: true }),
+  date: z.string(),
   rank: z.number(),
 });
 
