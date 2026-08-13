@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const CreateRankSchema = z.object({
+  id: z.uuid().optional().nullable(),
   game_id: z.string(),
   date: z.string(),
   rank: z.number(),
@@ -9,7 +10,7 @@ export const CreateRankSchema = z.object({
 export const RankSchema = z.object({
   id: z.uuid(),
   game_id: z.string(),
-  date: z.string(),
+  date: z.date(),
   rank: z.number(),
 });
 
