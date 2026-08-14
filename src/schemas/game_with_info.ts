@@ -4,7 +4,7 @@ import { GameInfoSchema } from "./game_info";
 
 export const GameWithInfoSchema = z.object({
     ...GameSchema.shape,
-    ...GameInfoSchema.omit({ id: true, game_id: true }).shape,
+    ...GameInfoSchema.shape,
     game_score: z.number().optional().nullable()
 });
 
