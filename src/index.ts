@@ -8,3 +8,4 @@ export * from "./schemas/game_info";
 export * from "./schemas/game_with_info";
 export * from "./schemas/drop_down_data";
 export * from "./helpers/validators";
+export * from "./schemas/setting";
