@@ -1,18 +1,18 @@
-import { z } from "zod";
+import {z} from "zod";
 
 export const CreateGameSchema = z.object({
-  name: z.string(),
-  release_date: z.iso.datetime({ offset: true }).optional().nullable(),
-  link: z.string().optional().nullable(),
-  recorded: z.boolean(),
+    name: z.string(),
+    release_date: z.date().optional().nullable(),
+    link: z.string().optional().nullable(),
+    recorded: z.boolean(),
 });
 
 export const GameSchema = z.object({
-  id: z.uuid(),
-  name: z.string(),
-  release_date: z.iso.datetime({ offset: true }).optional().nullable(),
-  link: z.string().optional().nullable(),
-  recorded: z.boolean(),
+    id: z.uuid(),
+    name: z.string(),
+    release_date: z.date().optional().nullable(),
+    link: z.string().optional().nullable(),
+    recorded: z.boolean(),
 });
 
 export type CreateGameDto = z.infer<typeof CreateGameSchema>;

@@ -9,19 +9,20 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Noodles-Coders-Team/weather-common.git"
+    "url": "git+https://github.com/Noodles-Coders-Team/vtp-common.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Noodles-Coders-Team/weather-common/issues"
+    "url": "https://github.com/Noodles-Coders-Team/vtp-common/issues"
   },
-  "homepage": "https://github.com/Noodles-Coders-Team/weather-common#readme",
+  "homepage": "https://github.com/Noodles-Coders-Team/vtp-common#readme",
   "dependencies": {
     "zod": "^4.4.3"
   },

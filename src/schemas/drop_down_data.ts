@@ -1,4 +1,4 @@
-import { z } from "zod";
+import {z} from "zod";
 
 export const DropDownSchema = z.object({
     key: z.string().optional().nullable(),

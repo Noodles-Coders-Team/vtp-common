@@ -1,6 +1,6 @@
-import { z } from "zod";
-import { GameSchema } from "./game";
-import { GameInfoSchema } from "./game_info";
+import {z} from "zod";
+import {GameSchema} from "./game";
+import {GameInfoSchema} from "./game_info";
 
 export const GameWithInfoSchema = z.object({
     ...GameSchema.shape,
