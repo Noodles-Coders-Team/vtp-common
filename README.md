@@ -1,2 +1,4 @@
-# How to
-After each update run `npm run build`
+# VTP Lib
+
+All entities described for VTP project (frontend and backend).
+Common helpers (schema validations).

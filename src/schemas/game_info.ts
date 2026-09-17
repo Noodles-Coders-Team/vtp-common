@@ -6,7 +6,7 @@ export const CreateGameInfoSchema = z.object({
     can_record: z.boolean().default(false),
     genre: z.array(z.string()).optional(),
     tags: z.array(z.string()).optional(),
-    notes: z.string().optional()
+    notes: z.string().optional().nullable()
 });
 
 export const GameInfoSchema = z.object({
@@ -16,7 +16,7 @@ export const GameInfoSchema = z.object({
     can_record: z.boolean().default(false),
     genre: z.array(z.string()).optional(),
     tags: z.array(z.string()).optional(),
-    notes: z.string().optional()
+    notes: z.string().optional().nullable()
 });
 
 export type CreateGameInfoDto = z.infer<typeof CreateGameInfoSchema>;
