@@ -8,10 +8,8 @@ export const CreateRankSchema = z.object({
 });
 
 export const RankSchema = z.object({
+    ...CreateRankSchema.shape,
     id: z.uuid(),
-    game_id: z.string(),
-    date: z.date(),
-    rank: z.number(),
 });
 
 export type CreateRankDto = z.infer<typeof CreateRankSchema>;

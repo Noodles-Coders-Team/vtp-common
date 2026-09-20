@@ -9,10 +9,7 @@ export const CreateGameSchema = z.object({
 
 export const GameSchema = z.object({
     id: z.uuid(),
-    name: z.string(),
-    release_date: z.date().optional().nullable(),
-    link: z.string().optional().nullable(),
-    recorded: z.boolean(),
+    ...CreateGameSchema.shape
 });
 
 export type CreateGameDto = z.infer<typeof CreateGameSchema>;

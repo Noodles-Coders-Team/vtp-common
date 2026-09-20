@@ -9,7 +9,9 @@
     "dist"
   ],
   "scripts": {
+    "prebuild": "if exist dist rmdir /s /q dist",
     "build": "tsc",
+    "preprepare": "if exist dist rmdir /s /q dist",
     "prepare": "tsc"
   },
   "repository": {
