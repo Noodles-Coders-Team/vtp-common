@@ -52,7 +52,7 @@ export const CreatePostInformationSchema = z.object({
 
 export const PostInformationSchema = z.object({
     id: z.uuid(),
-    import_date: z.date(),
+    import_date: z.coerce.date(),
     ...CreatePostInformationSchema.shape
 });
 

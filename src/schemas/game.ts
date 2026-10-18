@@ -2,7 +2,7 @@ import {z} from "zod";
 
 export const CreateGameSchema = z.object({
     name: z.string(),
-    release_date: z.date().optional().nullable(),
+    release_date: z.coerce.date().optional().nullable(),
     link: z.string().optional().nullable(),
     recorded: z.boolean(),
 });

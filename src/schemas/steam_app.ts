@@ -8,7 +8,7 @@ export const SteamAppSchema = z.object({
     genres: z.array(z.string()).optional(),
     tags: z.array(z.string()).optional(),
     metacritic_score: z.int().nullish(),
-    release_date: z.date().nullish(),
+    release_date: z.coerce.date().nullish(),
     review_count: z.number().nullish(),
 });
 
