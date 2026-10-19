@@ -3,6 +3,7 @@ import {z} from "zod";
 export const SteamAppSchema = z.object({
     id: z.int(),
     is_data_imported: z.boolean().default(false),
+    is_tags_imported: z.boolean().default(false),
     name: z.string().nullish(),
     categories: z.array(z.string()).optional(),
     genres: z.array(z.string()).optional(),
