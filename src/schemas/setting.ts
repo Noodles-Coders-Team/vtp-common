@@ -3,7 +3,8 @@ import {z} from "zod";
 export const SettingSchema = z.object({
     key: z.string().min(2),
     value: z.string().min(1),
-    display: z.string().min(2)
+    display: z.string().min(2),
+    is_system: z.boolean()
 });
 
 export type SettingDto = z.infer<typeof SettingSchema>;
