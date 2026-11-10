@@ -4,7 +4,7 @@ import {UserSteamAppRefDataConfigListSchema} from "./user_steam_app_ref_data_con
 
 export const UserGameScoreConfigSchema = z.object({
     id: z.string(),
-    user_login: z.string(),
+    user_id: z.string(),
     score_config_label: z.string(),
     score_config: UserSteamAppRefDataConfigListSchema,
 });

@@ -1,11 +1,26 @@
 import {z} from "zod";
 
 
-export const UserSchema = z.object({
-    login: z.string().min(2).max(100),
-    user_name: z.string().min(2).max(100),
-    permission_level: z.string().max(100).nullish()
+const BaseUserSchema = z.object({
+    email: z.email(),
+    password: z.string().min(8).max(100),
+    callbackURL: z.string(),
 });
 
 
-export type UserDto = z.infer<typeof UserSchema>;
+export const UserSignUp = z.object({
+    ...BaseUserSchema.shape,
+    name: z.string().min(2).max(50),
+});
+
+
+export type UserSignUpDto = z.infer<typeof UserSignUp>;
+
+
+export const UserSignInDto = z.object({
+    ...BaseUserSchema.shape,
+    rememberMe: z.boolean().default(true)
+});
+
+
+export type UserSignInDto = z.infer<typeof UserSignInDto>;
