@@ -12,4 +12,5 @@ export * from "./schemas/setting";
 export * from "./schemas/steam_app";
 export * from "./schemas/steam_app_reference_data";
 export * from "./schemas/user_game_score_config";
-export * from "./schemas/user_steam_app_ref_data_config"
+export * from "./schemas/user_steam_app_ref_data_config";
+export * from "./enums/UserRoles";
