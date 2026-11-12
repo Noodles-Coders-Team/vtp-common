@@ -105,11 +105,6 @@ SteamAppRefDataSchema              id, value, type: GENRE | CATEGORY | TAG
 `SteamAppReferenceDataType` enum in the backend's Prisma schema by hand — change one and
 change the other.
 
-`UserGameScoreConfigSchema.score_config` is the typed view of a Prisma `Json` column.
-Prisma hands that column out as an opaque `JsonValue`, so this schema is what narrows it
-on read and what the backend validates against on write; the reasoning is written up in
-`SCHEMA.md`, alongside the three repos in the parent directory.
-
 ### Conventions
 
 * **DTOs are always `z.infer`**, never hand-written. Change the schema and the type
