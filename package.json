@@ -25,11 +25,12 @@
     "url": "https://github.com/Noodles-Coders-Team/vtp-common/issues"
   },
   "homepage": "https://github.com/Noodles-Coders-Team/vtp-common#readme",
-  "dependencies": {
+  "peerDependencies": {
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "zod": "^4.4.3"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
