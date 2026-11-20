@@ -6,6 +6,8 @@ export const UserGameScoreConfigSchema = z.object({
     id: z.string(),
     user_id: z.string(),
     score_config_label: z.string(),
+    minimum_reviews: z.int().nullish(),
+    positive_reviews_percentage: z.int().nullish(),
     score_config: UserSteamAppRefDataConfigListSchema,
 });
 

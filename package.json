@@ -9,10 +9,13 @@
     "dist"
   ],
   "scripts": {
-    "prebuild": "if exist dist rmdir /s /q dist",
+    "clean": "node scripts/clean.mjs",
+    "prebuild": "npm run clean",
     "build": "tsc",
-    "preprepare": "if exist dist rmdir /s /q dist",
-    "prepare": "tsc"
+    "prepare": "node scripts/prepare.mjs"
+  },
+  "engines": {
+    "node": ">=22.13.0"
   },
   "repository": {
     "type": "git",

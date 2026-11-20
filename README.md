@@ -18,7 +18,8 @@ Part of a three repository set:
 
 ## Getting started
 
-Prerequisites: Node.js 20+.
+Prerequisites: Node.js 22.13+ (see `.nvmrc`). Windows and Linux both work, with the same
+commands.
 
 ```bash
 npm install
@@ -31,22 +32,24 @@ npm run build   # tsc → dist/
 `npm install` resolves the package but every import from it fails. The three repos must
 sit next to each other on disk for the `file:` link to work.
 
-`prepare` also runs `tsc`, so an `npm install` inside this repo produces a build as a side
-effect.
+`prepare` also compiles, so an `npm install` inside this repo produces a build as a side
+effect. npm runs that same `prepare` during a consumer's install too, through the `file:`
+link. If this package has no `node_modules` yet at that point there is no compiler to run,
+so the build is skipped with a warning instead of failing the consumer's install.
 
 Re-run the build after every schema change: the `file:` link serves `dist/`, not `src/`,
 so an unbuilt edit is invisible to the API and the client.
-
-> The `prebuild` and `preprepare` scripts are `if exist dist rmdir /s /q dist` — **cmd.exe
-> syntax**. They fail on macOS and Linux. Only the clean step is affected: `tsc` still
-> overwrites `dist/`, so a plain `npx tsc` works anywhere.
 
 ### Scripts
 
 | Command | What it does |
 | --- | --- |
+| `npm run clean` | Deletes `dist/` via [scripts/clean.mjs](scripts/clean.mjs) |
 | `npm run build` | Clears `dist/` and compiles `src/` with `tsc` |
-| `npm run prepare` | Same thing, run automatically by `npm install` |
+| `npm run prepare` | Same thing via [scripts/prepare.mjs](scripts/prepare.mjs), run automatically by `npm install` |
+
+Both are node scripts rather than shell ones on purpose: npm runs scripts through cmd.exe
+on Windows and `sh` elsewhere, so neither `rmdir /s /q` nor `rm -rf` would work on both.
 
 There is no test script and no linter here. `tsconfig.json` is strict and adds
 `noUncheckedIndexedAccess` and `exactOptionalPropertyTypes`, so it is stricter than either
